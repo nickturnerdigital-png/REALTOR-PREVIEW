@@ -13,11 +13,18 @@ export default function IntroSplit() {
             <h2 className="h2-serif mt-4">
               Real estate, handled with quiet precision.
             </h2>
-            <p className="lead mt-5">
-              We represent a deliberately small number of clients each year — so every listing
-              receives the strategy, marketing and discretion it deserves. The result is a track
-              record that speaks softly and sells decisively.
-            </p>
+            <div className="mt-7 space-y-5">
+              {[
+                ['Top 1%', 'Victoria Real Estate Board — every year since 2015'],
+                ['9 days', 'Average time from listing to sale'],
+                ['Off-market', 'Private listings most buyers never see'],
+              ].map(([bold, rest]) => (
+                <div key={bold} className="flex items-baseline gap-4 border-b border-ink/10 pb-5">
+                  <span className="font-serif text-[1.4rem] text-ink shrink-0 w-[7rem]">{bold}</span>
+                  <span className="text-muted text-[0.93rem]">{rest}</span>
+                </div>
+              ))}
+            </div>
             <div className="flex flex-wrap items-center gap-5 mt-8">
               <Link to="/about" className="btn btn-dark">
                 Meet Natalie <span className="arrow">→</span>
