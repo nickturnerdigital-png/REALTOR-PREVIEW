@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — Marin &amp; West Victoria Luxury Real Estate</title>
+    <meta
+      name="description"
+      content="Get in touch with Marin & West — boutique luxury real estate advisory in Victoria, BC. Book a private consultation with Elena Marin."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300;1,9..144,400&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%231f3a2e'/><text x='50' y='68' font-size='58' text-anchor='middle' fill='%23b8895a' font-family='Georgia'>M</text></svg>"
+    />
+  </head>
+  <body data-page="contact">
+    <div class="preloader" id="preloader">
+      <span class="logo__name">Marin &amp; West</span>
+    </div>
+    <header class="site-header" id="header"></header>
+
+    <section class="page-hero">
+      <div class="page-hero__media">
+        <img
+          src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=80"
+          alt="Elegant interior detail"
+        />
+      </div>
+      <div class="page-hero__inner container">
+        <p class="eyebrow" style="color: var(--brass-light)">Contact</p>
+        <h1 class="h1">Let’s start a conversation</h1>
+        <p class="breadcrumb"><a href="index.html">Home</a> / Contact</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split" style="align-items: flex-start">
+        <!-- Contact info -->
+        <div data-reveal>
+          <p class="eyebrow">Get in touch</p>
+          <h2 class="h2" style="margin-top: 1rem">
+            However you’d like to reach us.
+          </h2>
+          <p class="lead mt-1">
+            Whether you’re buying, selling, or simply exploring the market, we’d
+            be delighted to help. Every enquiry is answered personally.
+          </p>
+
+          <div class="mt-3" style="display: grid; gap: 1.5rem">
+            <div>
+              <p class="eyebrow">Call</p>
+              <a
+                class="h3"
+                style="display: inline-block; margin-top: 0.5rem"
+                id="contactPhone"
+                href="#"
+                >250-555-0142</a
+              >
+            </div>
+            <div>
+              <p class="eyebrow">Email</p>
+              <a
+                class="h3"
+                style="display: inline-block; margin-top: 0.5rem"
+                id="contactEmail"
+                href="#"
+                >hello@marinandwest.ca</a
+              >
+            </div>
+            <div>
+              <p class="eyebrow">Visit</p>
+              <p class="h3" style="margin-top: 0.5rem; font-size: 1.3rem">
+                1208 Wharf Street<br />Victoria, BC V8W 3B9
+              </p>
+            </div>
+          </div>
+
+          <div class="map-embed" style="margin-top: 2.5rem">
+            <div class="map-pin">
+              <div class="dot"></div>
+              Marin &amp; West · Wharf Street, Victoria
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact form -->
+        <div data-reveal style="--d: 0.12s">
+          <div
+            style="
+              border: 1px solid var(--line);
+              border-radius: var(--radius-lg);
+              padding: clamp(1.5rem, 3vw, 2.5rem);
+              background: var(--paper);
+            "
+          >
+            <h3 class="h3" style="margin-bottom: 1.5rem">Send a message</h3>
+            <form id="contactForm" class="form">
+              <div class="field-row">
+                <div class="field">
+                  <label for="cName">Name</label>
+                  <input id="cName" name="name" type="text" required />
+                </div>
+                <div class="field">
+                  <label for="cPhone">Phone</label>
+                  <input id="cPhone" name="phone" type="tel" />
+                </div>
+              </div>
+              <div class="field">
+                <label for="cEmail">Email</label>
+                <input id="cEmail" name="email" type="email" required />
+              </div>
+              <div class="field">
+                <label for="cInterest">I’m interested in…</label>
+                <select id="cInterest" name="interest">
+                  <option>Selling my home</option>
+                  <option>Buying a home</option>
+                  <option>A market valuation</option>
+                  <option>A specific listing</option>
+                  <option>Something else</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="cMessage">Message</label>
+                <textarea id="cMessage" name="message" required></textarea>
+              </div>
+              <button type="submit" class="btn btn--brass">
+                Send Message <span class="arrow">→</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer" id="footer"></footer>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js" defer></script>
+    <script src="assets/js/data.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
+    <script>
+      // Wire the contact page's static contact links to SITE config
+      document.addEventListener("DOMContentLoaded", function () {
+        if (!window.SITE) return;
+        var p = document.getElementById("contactPhone");
+        var e = document.getElementById("contactEmail");
+        if (p) {
+          p.textContent = SITE.agent.phone;
+          p.href = SITE.agent.phoneHref;
+        }
+        if (e) {
+          e.textContent = SITE.agent.email;
+          e.href = SITE.agent.emailHref;
+        }
+      });
+    </script>
+  </body>
+</html>
