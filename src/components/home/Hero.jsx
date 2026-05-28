@@ -100,9 +100,8 @@ export default function Hero() {
           Victoria's most coveted addresses
         </h1>
 
-        <p className="hero-sub lead text-cream/80 mt-6 max-w-[46ch]" style={{ opacity: 0 }}>
-          A boutique advisory representing buyers and sellers of Victoria's finest oceanfront
-          estates, heritage homes and architectural residences.
+        <p className="hero-sub lead text-cream/80 mt-6 max-w-[36ch]" style={{ opacity: 0 }}>
+          Boutique. Deliberate. Victoria's top 1%.
         </p>
 
         <div className="hero-actions flex flex-wrap gap-4 mt-9">
