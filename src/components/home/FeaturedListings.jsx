@@ -21,24 +21,21 @@ export default function FeaturedListings() {
     const section = sectionRef.current
     if (!track || !section) return
 
-    // Let layout settle
-    requestAnimationFrame(() => {
-      const dist = track.scrollWidth - window.innerWidth
-      if (dist <= 0) return
+    const dist = track.scrollWidth - window.innerWidth
+    if (dist <= 0) return
 
-      gsap.to(track, {
-        x: -dist,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: section,
-          start: 'top top',
-          end: `+=${dist + window.innerWidth * 0.4}`,
-          pin: true,
-          scrub: 1.2,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-        },
-      })
+    gsap.to(track, {
+      x: -dist,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: section,
+        start: 'top top',
+        end: `+=${dist + window.innerWidth * 0.4}`,
+        pin: true,
+        scrub: 1.2,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
+      },
     })
   }, { scope: sectionRef })
 

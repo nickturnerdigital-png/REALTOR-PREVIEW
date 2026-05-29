@@ -3,32 +3,36 @@ import { SITE } from '../../data/index'
 
 export default function CTABand() {
   return (
-    <section className="relative overflow-hidden text-center text-cream">
-      {/* Background */}
-      <div className="absolute inset-0 -z-10">
-        <img
-          src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80"
-          alt="Victoria coastline"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-sage-deep/82" />
-      </div>
+    <section className="bg-sage-deep text-cream overflow-hidden">
+      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[520px]">
+        {/* Portrait side */}
+        <div className="relative hidden lg:block">
+          <img
+            src={SITE.agent.portrait}
+            alt="Natalie Harlow"
+            className="w-full h-full object-cover object-top"
+            style={{ filter: 'brightness(0.85) contrast(1.05)' }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-sage-deep/60" />
+        </div>
 
-      <div className="container-x py-[clamp(5rem,11vw,9rem)]">
-        <p className="eyebrow eyebrow-center justify-center" style={{ color: '#CCA87A' }}>Let's begin</p>
-        <h2 className="h1-serif text-cream mt-5 mx-auto max-w-[20ch]">
-          Curious what your home is worth today?
-        </h2>
-        <p className="lead text-cream/65 mt-5 mx-auto max-w-[50ch]">
-          Receive a complimentary, no-obligation valuation prepared personally by {SITE.agent.name.split(',')[0]}.
-        </p>
-        <div className="flex flex-wrap justify-center gap-4 mt-9">
-          <Link to="/sell" className="btn btn-brass btn-lg">
-            Get My Valuation <span className="arrow">→</span>
-          </Link>
-          <Link to="/contact" className="btn btn-ghost btn-lg">
-            Contact Us
-          </Link>
+        {/* Content side */}
+        <div className="flex flex-col justify-center px-[clamp(2rem,8vw,6rem)] py-[clamp(4rem,8vw,7rem)]">
+          <p className="eyebrow" style={{ color: '#CCA87A' }}>Start here</p>
+          <h2 className="display mt-4 leading-none" style={{ fontSize: 'clamp(2.8rem,6vw,5.5rem)' }}>
+            Your home deserves a strategy.
+          </h2>
+          <p className="text-cream/60 mt-5 text-[1.05rem] leading-relaxed max-w-[38ch]">
+            Free market analysis. Prepared personally by Natalie. Ready in 24 hours.
+          </p>
+          <div className="flex flex-wrap gap-4 mt-8">
+            <Link to="/sell" className="btn btn-brass btn-lg">
+              Get My Free Valuation <span className="arrow">→</span>
+            </Link>
+            <Link to="/contact" className="link-underline text-cream/70 flex items-center self-center">
+              Or just say hello
+            </Link>
+          </div>
         </div>
       </div>
     </section>
