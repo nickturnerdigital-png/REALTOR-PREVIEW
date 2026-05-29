@@ -96,9 +96,11 @@ export default function Hero() {
       <div className="container-x relative z-10 w-full pb-[clamp(4rem,9vh,8rem)] pt-[calc(84px+2rem)]">
         <p className="eyebrow" style={{ color: '#CCA87A' }}>Victoria · British Columbia</p>
 
-        <h1 ref={titleRef} className="display mt-5 max-w-[16ch]">
-          Victoria's most coveted addresses
-        </h1>
+        <h1
+          ref={titleRef}
+          className="display mt-5 max-w-[16ch]"
+          dangerouslySetInnerHTML={{ __html: "Victoria's most coveted addresses" }}
+        />
 
         <p className="hero-sub lead text-cream/80 mt-6 max-w-[36ch]" style={{ opacity: 0 }}>
           Boutique. Deliberate. Victoria's top 1%.
