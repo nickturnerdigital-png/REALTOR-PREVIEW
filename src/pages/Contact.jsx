@@ -4,10 +4,14 @@ import RevealWrapper from '../components/shared/RevealWrapper'
 import { SITE } from '../data/index'
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' })
+  const [form, setForm] = useState({ name: '', email: '', phone: '', website: '', message: '' })
   const [sent, setSent] = useState(false)
 
   function update(k, v) { setForm(f => ({ ...f, [k]: v })) }
+
+  function normalizeUrl(v) {
+    if (v && !/^https?:\/\//i.test(v)) update('website', 'https://' + v)
+  }
 
   function onSubmit(e) {
     e.preventDefault()
@@ -50,6 +54,17 @@ export default function Contact() {
                   <div className="form-field">
                     <label className="form-label">Email</label>
                     <input className="form-input" type="email" required placeholder="you@email.com" value={form.email} onChange={e => update('email', e.target.value)} />
+                  </div>
+                  <div className="form-field">
+                    <label className="form-label">Current website <span className="text-muted font-normal">(optional)</span></label>
+                    <input
+                      className="form-input"
+                      type="text"
+                      placeholder="yoursite.ca"
+                      value={form.website}
+                      onChange={e => update('website', e.target.value)}
+                      onBlur={e => normalizeUrl(e.target.value.trim())}
+                    />
                   </div>
                   <div className="form-field">
                     <label className="form-label">Message</label>
