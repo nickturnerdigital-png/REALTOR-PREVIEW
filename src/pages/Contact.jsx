@@ -56,7 +56,7 @@ export default function Contact() {
                     <input className="form-input" type="email" required placeholder="you@email.com" value={form.email} onChange={e => update('email', e.target.value)} />
                   </div>
                   <div className="form-field">
-                    <label className="form-label">Current website <span className="text-muted font-normal">(optional)</span></label>
+                    <label className="form-label">Website (if you have one)</label>
                     <input
                       className="form-input"
                       type="text"
